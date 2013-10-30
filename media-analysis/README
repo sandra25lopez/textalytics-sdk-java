@@ -1,0 +1,58 @@
+Simple java client to textalytics.com Social Media Analysis API
+
+Extract relevant information from any kind of text.
+
+Example use
+-----------
+The project uses Maven 2 to build:
+
+
+You can import in an IDE like Eclipse by: 
+
+1. Select File > Import... 
+2. Search for Maven > Existing Maven project
+
+
+The program may be executed by: 
+
+	java -cp <classpath> es.daedalus.textalytics.sma.MyClient -key=<key> -file=example.txt [-what=sentiment|uris]
+
+where <classpath> includes classes folder and dependencies lib 
+and   <key> is the license key from textalytics.com
+
+
+
+Code description
+----------------
+MyClient.java           - example client 
+SmaClient.java          - wrapper around textalytics.com service calls
+SmaResponseHandler.java - transforms responses into wrapper POJOs in the domain package
+SmaSSLSocketFactory     - SocketFactory that accepts self-signed certificates 
+					    - use default implementation if you include textalytics.com in your keystore
+domain/*                - wrapper POJOs around the service response: entities, topics, etc...
+
+Usage, License and Copying
+--------------------------
+textalytics.com is a cloud service provided by DAEDALUS. S.A. 
+This client may be used in the terms described in the LICENSE file.
+For details please refer to: http://www.textalytics.com
+
+This client uses Apache HttpComponents Client 4.x , Apache Log4j 1.2 and Jackson 2.x. 
+
+This libraries are distributed under the Apache License Version 2.0 (http://www.apache.org/licenses/)
+
+The detailed list of dependencies
+[compile, run] 
+jackson-annotations-2.0.6.jar
+jackson-core-2.0.6.jar
+jackson-databind-2.0.6.jar
+httpclient-4.0.3.jar
+httpcore-4.0.1.jar
+commons-logging-1.1.1.jar
+commons-codec-1.3.jar
+log4j-1.2.16.jar
+
+[test]
+junit-4.8.2.jar	
+
+Copyright (c) 2013, DAEDALUS S.A. All rights reserved
